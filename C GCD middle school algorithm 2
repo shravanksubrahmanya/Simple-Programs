@@ -1,0 +1,40 @@
+#include<stdio.h>
+#define SIZE 30
+int min(int x,int y)
+{
+	if(x > y)
+		return x;
+	else
+		return y;
+}
+
+int gcd(int x, int y)
+{
+	int gcd = 1,m;
+	m = min(x,y);
+	if(x > 1 && y > 1)
+	{
+		for(int i = 2; i <= m; i++)
+		{
+			while((x % i == 0) && (y % i == 0))
+			{
+				gcd *= i;
+				x = x/i;
+				y = y/i;
+			}
+		}	
+	}	
+	return gcd;
+}
+
+int main()
+{
+	int n1,n2;
+	printf("Enter the value for number 1 and number 2");
+	scanf("%d %d",&n1,&n2);
+	
+	printf("Gcd is %d",gcd(n1,n2));
+	
+	return 0;
+}
+
