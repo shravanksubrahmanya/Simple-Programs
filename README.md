@@ -1,2 +1,2 @@
-# myprojects
+# Simple Programs
 Simple Programs
